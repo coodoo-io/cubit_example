@@ -16,8 +16,6 @@ stages:
 # Check app for format and lint exceptions (fail fast)
 Check App:
   stage: check
-  except:
-    - main
   before_script:  
     - flutter --version
   script:
@@ -32,8 +30,6 @@ Check App:
 # Check code quality
 code_quality:
   stage: test
-  except:
-    - main
   before_script:
     - export PATH="$PATH":"$HOME/.pub-cache/bin"
     - flutter pub global activate dart_code_metrics
@@ -46,8 +42,6 @@ code_quality:
 # Run tests and report quality
 Test:
   stage: test
-  except:
-    - main
   before_script:
     - export PATH="$PATH":"$HOME/.pub-cache/bin"
     - flutter pub global activate junitreport
@@ -67,8 +61,6 @@ Test:
 # Build the app to check if release builds still work
 Build Android (.apk):
   stage: build
-  except:
-    - main
   script:
     - make build-android-apk
   artifacts:
