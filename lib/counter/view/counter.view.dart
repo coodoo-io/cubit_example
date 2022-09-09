@@ -1,5 +1,6 @@
 import 'package:cubit_example/counter/cubit/counter.cubit.dart';
 import 'package:cubit_example/counter/view/widgets/counter_text.widget.dart';
+import 'package:cubit_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,12 +29,14 @@ class CounterView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            key: keyButtonIncrement,
             onPressed: () => counterCubit.increment(),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
+            key: keyButtonDecrement,
             onPressed: () => counterCubit.decrement(),
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),

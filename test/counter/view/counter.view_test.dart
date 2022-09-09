@@ -1,15 +1,13 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:cubit_example/counter/cubit/counter.cubit.dart';
 import 'package:cubit_example/counter/view/counter.view.dart';
+import 'package:cubit_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockCounterCubit extends MockCubit<int> implements CounterCubit {}
-
-const _buttonIncrementKey = Key('CounterView_Button_increment');
-const _buttonDecrementKey = Key('CounterView_Button_decrement');
 
 void main() {
   late CounterCubit counterCubit;
@@ -43,7 +41,7 @@ void main() {
           ),
         ),
       );
-      await tester.tap(find.byKey(_buttonIncrementKey));
+      await tester.tap(find.byKey(keyButtonIncrement));
       verify(() => counterCubit.increment()).called(1);
     });
 
@@ -58,7 +56,7 @@ void main() {
           ),
         ),
       );
-      final decrementFinder = find.byKey(_buttonDecrementKey);
+      final decrementFinder = find.byKey(keyButtonDecrement);
       await tester.ensureVisible(decrementFinder);
       await tester.tap(decrementFinder);
       verify(() => counterCubit.decrement()).called(1);
