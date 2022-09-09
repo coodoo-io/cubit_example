@@ -49,7 +49,6 @@ build-runner-watch:
 clean:
 	flutter clean
 	flutter pub get
-	make build-runner
 
 # Export Archives .ipa, .aab and .apk
 build-ios:
