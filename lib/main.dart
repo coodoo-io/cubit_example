@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 const keyButtonIncrement = Key('CounterView_Button_increment');
 const keyButtonDecrement = Key('CounterView_Button_decrement');
+const keyButtonForward = Key('CounterView_Button_forward');
 
 void main() {
   Bloc.observer = AppBlocObserver();
