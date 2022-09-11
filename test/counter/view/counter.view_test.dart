@@ -8,8 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockCounterCubit extends MockCubit<CounterState> implements CounterCubit {
-}
+class MockCounterCubit extends MockCubit<CounterState> implements CounterCubit {}
 
 void main() {
   late CounterCubit counterCubit;
